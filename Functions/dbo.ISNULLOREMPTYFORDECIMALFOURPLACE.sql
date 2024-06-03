@@ -1,0 +1,33 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE   FUNCTION [dbo].[ISNULLOREMPTYFORDECIMALFOURPLACE]
+(   
+    @value NVARCHAR(max)
+)
+RETURNS NVARCHAR(MAX)
+AS
+BEGIN 
+
+IF (@value IS NULL)
+BEGIN
+    RETURN 0
+END
+ELSE
+BEGIN
+    IF (LEN(LTRIM(@value)) = 0)
+    BEGIN 
+        RETURN 0
+    END 
+		ELSE
+	BEGIN
+	   Select @value = ISNULL(TRY_PARSE(@value as decimal(15,4)),0) 
+
+	END
+END
+
+RETURN CAST(@value as decimal(18,4));
+END
+GO

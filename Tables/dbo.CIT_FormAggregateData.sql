@@ -1,0 +1,40 @@
+CREATE TABLE [dbo].[CIT_FormAggregateData]
+(
+[Id] [bigint] NOT NULL IDENTITY(1, 1),
+[TenantId] [int] NULL,
+[UniqueIdentifier] [uniqueidentifier] NULL,
+[FormDisplayOrder] [int] NULL,
+[ISvalueFmTaxCodeMaster] [bit] NULL,
+[TaxCode] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Description] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[TaxCodeDisplayOrder] [int] NULL,
+[MainGroup] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[MainGroupDisplayOrder] [int] NULL,
+[SubGroup] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SubGroupDisplayOrder] [int] NULL,
+[FinStartDate] [datetime2] NULL,
+[FinEndDate] [datetime2] NULL,
+[OpBalance] [decimal] (18, 2) NULL,
+[Debit] [decimal] (18, 2) NULL,
+[Credit] [decimal] (18, 2) NULL,
+[ClBalance] [decimal] (18, 2) NULL,
+[ScheduleNo] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ScheduleStatus] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ScheduleBalance] [decimal] (18, 2) NULL,
+[FormData] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[TallyStatus] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ApplicableStatus] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CreationTime] [datetime2] NULL,
+[CreatorUserId] [bigint] NULL,
+[LastModificationTime] [datetime2] NULL,
+[LastModifierUserId] [bigint] NULL,
+[IsActive] [bit] NULL,
+[DisplayInnerColumn] [decimal] (18, 2) NULL,
+[DisplayOuterColumn] [decimal] (18, 2) NULL,
+[ReferenceStatus] [nvarchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[FormData_OC] [decimal] (18, 2) NULL,
+[ReferenceStatusOuter] [nvarchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[CIT_FormAggregateData] ADD CONSTRAINT [PK__CIT_Form__3214EC0715E9CFA8] PRIMARY KEY CLUSTERED ([Id]) ON [PRIMARY]
+GO
